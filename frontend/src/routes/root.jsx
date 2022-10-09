@@ -1,5 +1,6 @@
 import { Outlet, Link, useLoaderData, Form } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
+import Navbar from "../components/Navbar"
 
 export async function action() {
   await createContact();
@@ -14,6 +15,8 @@ export default function Root() {
   const { contacts } = useLoaderData();
   return (
     <>
+      
+
       <div id="sidebar">
         <h1>React Router Contacts</h1>
         <div>
@@ -63,3 +66,4 @@ export default function Root() {
     </>
   );
 }
+
