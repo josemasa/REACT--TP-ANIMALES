@@ -29,7 +29,7 @@ function Navbar() {
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    Link
+                    QUIENES SOMOS
                   </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -41,31 +41,18 @@ function Navbar() {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    Dropdown
+                    CATEGORIAS
                   </a>
                   <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="#">
-                      Action 1
+                      AVES
                     </a>
                     <a class="dropdown-item" href="#">
-                      Action 2
+                      MAMIFEROS
                     </a>
                   </div>
                 </li>
               </ul>
-              <form class="d-flex my-2 my-lg-0">
-                <input
-                  class="form-control me-sm-2"
-                  type="text"
-                  placeholder="Search"
-                />
-                <button
-                  class="btn btn-outline-success my-2 my-sm-0"
-                  type="submit"
-                >
-                  Search
-                </button>
-              </form>
             </div>
           </div>
         </nav>
@@ -77,5 +64,7 @@ function Navbar() {
 export default Navbar;
 
 const NavContainer = styled.nav`
-  color: white;
+  nav {
+    background-color: aqua;
+  }
 `;
