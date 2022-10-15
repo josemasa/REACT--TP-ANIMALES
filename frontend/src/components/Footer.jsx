@@ -27,6 +27,7 @@ function Footer() {
 export default Footer;
 
 const FOOTER = styled.div`
+  text-align: center;
   div {
     margin-top: 20px;
     padding: 10px;
@@ -34,6 +35,6 @@ const FOOTER = styled.div`
     background-color: #0dcaf0;
   }
   small {
-    font-size: 5px;
+    font-size: 15px;
   }
 `;
