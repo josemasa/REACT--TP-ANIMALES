@@ -15,11 +15,11 @@ import HomePage from "./pages/HomePage";
 import QS from "./pages/qs";
 import EditContact, { action as editAction } from "./routes/edit";
 import Index from "./routes/index";
-
+import Login from "./components/Login/Login";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Login />,
     errorElement: <ErrorPage />,
     loader: rootLoader,
     action: rootAction,
