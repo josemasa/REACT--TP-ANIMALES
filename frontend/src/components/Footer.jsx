@@ -34,6 +34,6 @@ const FOOTER = styled.div`
     background-color: #0dcaf0;
   }
   small {
-    font-size: 5px;
+    font-size: 15px;
   }
 `;
