@@ -1,14 +1,11 @@
-import { Form } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
+import { getContact } from "./contacts";
 
+export async function loader({ params }) {
+  return getContact(params.contactId);
+}
 export default function Contact() {
-  const contact = {
-    first: "Your",
-    last: "Name",
-    avatar: "https://placekitten.com/g/200/200",
-    twitter: "your_handle",
-    notes: "Some notes",
-    favorite: true,
-  };
+  const contact = useLoaderData();
 
   return (
     <div id="contact">
@@ -23,14 +20,17 @@ export default function Contact() {
               {contact.first} {contact.last}
             </>
           ) : (
-            <i>No Name</i>
+            <i>SIN NOMBRE</i>
           )}{" "}
           <Favorite contact={contact} />
         </h1>
 
         {contact.twitter && (
           <p>
-            <a target="_blank" href={`https://twitter.com/${contact.twitter}`}>
+            <a
+              target="_blank"
+              href={`https://scontent.faep7-1.fna.fbcdn.net/v/t1.6435-9/69607464_383529629237939_7559990877389586432_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHWa8WGHGlvk5wsJ2O4hK9v7yOAsE2khR7vI4CwTaSFHoh98HWp-YTbU5X2XVwGoLmhC1ENlI5G_lqIdJUQYpHp&_nc_ohc=70wtx4PfEe8AX_PDRYY&_nc_ht=scontent.faep7-1.fna&oh=00_AT-ifIjO6BRCHsKBKUdgqu2N08xPK4srHtt82W9tKCjBtw&oe=636EBE03`}
+            >
               {contact.twitter}
             </a>
           </p>
@@ -40,18 +40,18 @@ export default function Contact() {
 
         <div>
           <Form action="edit">
-            <button type="submit">Edit</button>
+            <button type="submit">EDITAR</button>
           </Form>
           <Form
             method="post"
             action="destroy"
             onSubmit={(event) => {
-              if (!confirm("Please confirm you want to delete this record.")) {
+              if (!confirm("CONFIRME BORRADO")) {
                 event.preventDefault();
               }
             }}
           >
-            <button type="submit">Delete</button>
+            <button type="submit">BORRAR</button>
           </Form>
         </div>
       </div>

@@ -8,7 +8,9 @@ function HomePage() {
     <>
       <div className="root">
         <Navbar />
+
         <Root />
+
         <Footer />
       </div>
     </>

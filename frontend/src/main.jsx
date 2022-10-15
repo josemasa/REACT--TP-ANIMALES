@@ -3,13 +3,18 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./components/error-page";
-import Contact from "./components/AgendaContactos/contact";
+import Contact, {
+  loader as contactLoader,
+} from "./components/AgendaContactos/contact";
 import Root, {
   loader as rootLoader,
   action as rootAction,
 } from "./components/AgendaContactos/root";
+import { action as destroyAction } from "./routes/destroy";
 import HomePage from "./pages/HomePage";
 import QS from "./pages/qs";
+import EditContact, { action as editAction } from "./routes/edit";
+import Index from "./routes/index";
 
 const router = createBrowserRouter([
   {
@@ -19,9 +24,22 @@ const router = createBrowserRouter([
     loader: rootLoader,
     action: rootAction,
     children: [
+      { index: true, element: <Index /> },
       {
         path: "contacts/:contactId",
         element: <Contact />,
+        loader: contactLoader,
+      },
+      {
+        path: "contacts/:contactId/edit",
+        element: <EditContact />,
+        loader: contactLoader,
+        action: editAction,
+      },
+      {
+        path: "contacts/:contactId/destroy",
+        action: destroyAction,
+        errorElement: <div>Oops! There was an error.</div>,
       },
     ],
   },
