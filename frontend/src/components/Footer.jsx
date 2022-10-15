@@ -27,6 +27,7 @@ function Footer() {
 export default Footer;
 
 const FOOTER = styled.div`
+  text-align: center;
   div {
     margin-top: 20px;
     padding: 10px;
