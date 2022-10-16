@@ -19,7 +19,7 @@ import Login from "./components/Login/Login";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <HomePage />,
     errorElement: <ErrorPage />,
     loader: rootLoader,
     action: rootAction,
