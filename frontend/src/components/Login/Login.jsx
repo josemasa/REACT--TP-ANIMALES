@@ -3,7 +3,7 @@ import basestyle from "../Base.module.css";
 import loginstyle from "./Login.module.css";
 import axios from "axios";
 import { useNavigate, NavLink } from "react-router-dom";
-import Root from '../../routes/root';
+import Root from "../../routes/root";
 const Login = ({ setUserState }) => {
   const navigate = useNavigate();
 
@@ -11,7 +11,6 @@ const Login = ({ setUserState }) => {
     username: "",
     password: "",
   });
-
 
   const changeHandler = (e) => {
     const { name, value } = e.target;
@@ -21,15 +20,10 @@ const Login = ({ setUserState }) => {
     });
   };
 
-
-
-
-
-  const loginHandler = (e)=>{
+  const loginHandler = (e) => {
     e.preventDefault();
 
-
-/*
+    /*
     axios.post("mongodb+srv://fullstack:fullstack@cluster0.hd0aepy.mongodb.net/TFI", user).then((res) => {
       alert(res.data.message);
       setUserState(res.data.user);
@@ -37,13 +31,12 @@ const Login = ({ setUserState }) => {
     });
 
 */
-    if(user.username == 'cristian' && user.password == 'cristian'){
-      navigate("/inicio");
-    }else{
-      alert("falló")
+    if (user.username == "cristian" && user.password == "cristian") {
+      navigate("/home");
+    } else {
+      alert("falló");
     }
-
-  }
+  };
 
   return (
     <div className={loginstyle.login}>
@@ -74,6 +67,5 @@ const Login = ({ setUserState }) => {
       <NavLink to="/signup">Not yet registered? Register Now</NavLink>
     </div>
   );
-
-}
+};
 export default Login;
