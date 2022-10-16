@@ -1,6 +1,11 @@
 # react-animales
 
-cd <your new project directory>
+# ----------BACKEND---------
+
+# -------FRONTEND--------
+
+cd frontend
+
 npm install react-router-dom localforage match-sorter sort-by
 
 npm install react-bootstrap bootstrap
