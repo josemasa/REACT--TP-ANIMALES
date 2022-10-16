@@ -16,7 +16,7 @@ import QS from "./pages/qs";
 import EditContact, { action as editAction } from "./routes/edit";
 import Index from "./routes/index";
 import Login from "./components/Login/Login";
-import App from "./App";
+
 const router = createBrowserRouter([
   {
     path: "/",
